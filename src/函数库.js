@@ -9,7 +9,7 @@ export function 过场动画开始(text) {
     过场动画.style.display = 'block';
     setTimeout(() => {
         过场动画.style.display = 'none';
-    }, 5000);
+    }, 3500);
 }
 
 
