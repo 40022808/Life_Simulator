@@ -1,0 +1,290 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.初始界面 {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+}
+
+.弹窗 {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.弹窗_box {
+    position: relative;
+    width: 50vw;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(70, 70, 70);
+    border-radius: 10px;   
+}
+
+.弹窗_text {
+    font-size: 3vmax;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    position: relative;
+    top: -2vh;
+    padding: 1vh 2vw;
+    background-color: rgb(100, 100, 100);
+    border-radius: 50px;
+}
+
+.弹窗_关闭 {
+    position: absolute;
+    bottom: 5vh;
+    font-size: 1.5vmax;
+    color: rgb(255, 255, 255);
+    background-color: rgb(100, 100, 100);
+    border-radius: 20px;
+    border: none;
+    padding: 1vh 2vw;
+    transition: all 0.2s;
+}
+
+.弹窗_关闭:hover {
+    background-color: rgb(177, 177, 177);
+    color: rgb(0, 0, 0);
+}
+
+.开局选项 {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.过场动画 {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    z-index: 100;
+}
+
+.过场动画_黑柱 {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+}
+
+.过场动画_文字 {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.过场动画_文字 h1 {
+    font-size: 7vmax;
+    text-align: center;
+    color: white;
+    opacity: 0;
+    animation: 
+        rotate-in-center 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both,
+        fade-out 0.8s ease-in forwards;
+    animation-delay: 0.9s, 2.5s; /* 第一个动画延迟 1.2s，第二个延迟 3s */
+}
+
+@keyframes rotate-in-center {
+    0% {
+        transform: rotate(-360deg) scale(0.1);
+        opacity: 0;
+    }
+    100% {
+        transform: rotate(0) scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes fade-out {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+  
+
+.过场动画_黑柱 div {
+    flex: 1;
+    background-color: black;
+    opacity: 0;
+}
+.过场动画_1 {
+    animation: moveUp 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) forwards, moveUp2 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) forwards; 
+    animation-delay: 0s, 3.5s;
+}
+.过场动画_2 {
+    animation: moveUp 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) forwards, moveUp2 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) forwards; 
+    animation-delay: 0.2s, 3.7s;
+}
+.过场动画_3 {
+    animation: moveUp 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) forwards, moveUp2 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) forwards; 
+    animation-delay: 0.4s, 3.9s;
+}
+
+@keyframes moveUp {
+    from {
+        transform: translateY(100vh); /* 从 100px 位置开始 */
+        opacity: 1; /* 可选，让元素淡入 */
+    }
+    to {
+        transform: translateY(0); /* 回到初始位置 */
+        opacity: 1;
+    }
+}
+
+@keyframes moveUp2 {
+    from {
+        transform: translateY(0); /* 从 100px 位置开始 */
+        opacity: 1; /* 可选，让元素淡入 */
+    }
+    to {
+        transform: translateY(-100vh); /* 回到初始位置 */
+        opacity: 1;
+    }
+}
+
+.初始界面_标题 {
+    position: absolute;
+    top: 20vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+}
+
+.初始界面_h1 {
+    font-size: 5vmax;
+    text-align: center;
+
+}
+
+.初始界面_h2 {
+    font-size: 1.8vmax;
+    text-align: center;
+}
+
+
+.初始界面_按钮 {
+    position: absolute;
+    bottom: 5vh;
+    left: 50vw;
+    height: 30vh;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:space-between;
+}
+
+.初始界面_按钮 button {
+    font-size: 2vmax;
+    padding: 1vh 2vw;
+    color: white;
+    border-radius: 10px;
+    background-color: rgb(0, 0, 0);
+    border: solid 2px rgb(26, 26, 26);
+    transition: all 0.2s;
+}
+
+.初始界面_按钮 button:hover {
+    background-color: rgb(66, 66, 66);
+
+}
+
+.开局选项_标题 {
+    position: absolute;
+    top: 10vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+}
+
+.开局选项_h1 {
+    font-size: 5vmax;
+    text-align: center;
+}
+
+.开局选项_选项 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10vh;
+    position: relative;
+    top: -5vh;
+}
+
+.开局选项_选项_其他选项 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 30vw;
+    justify-content: space-evenly;
+}
+
+.开局选项_选项_名字输入框 {
+    font-size: 2vmin;
+    padding: 1vh 2vw;
+    border-radius: 10px;
+    border: solid 2px rgb(26, 26, 26);
+    width: 30vw;
+    text-align: center;
+}
+
+.开局选项_选项_性别选择框, .开局选项_选项_难度选择框 {
+    font-size: 2vmin;
+    padding: 1vh 0.5vw;
+    border-radius: 10px;
+    border: solid 2px rgb(26, 26, 26);
+    width: 6vw;
+    text-align: center;
+}
+
+.开局选项_按钮 {
+    position: absolute;
+    bottom: 5vh;
+    left: 50vw;
+    width: 50vw;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:space-evenly;
+}
+
+.开局选项_按钮 button {
+    font-size: 2vmax;
+    padding: 1vh 2vw;
+    color: white;
+    border-radius: 10px;
+    background-color: rgb(0, 0, 0);
+    border: solid 2px rgb(26, 26, 26);
+    transition: all 0.2s;
+}
+
+.开局选项_按钮 button:hover {
+    background-color: rgb(66, 66, 66);
+
+}

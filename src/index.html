@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>人生模拟器</title>
+    <link rel="stylesheet" href="style.css">        
+    <link rel="icon" href="favicon.png" type="image/png">
+  </head>
+  <body>
+
+
+
+
+    <div class="初始界面" id="初始界面">
+      <div class="初始界面_标题">
+        <h1 class="初始界面_h1">人生模拟器</h1>
+        <h2 class="初始界面_h2">0.0.1</h2>
+      </div>
+
+
+      <div class="初始界面_按钮">
+        <button class="初始界面_按钮_开始" id="初始界面_按钮_开始">开始</button>
+        <button class="初始界面_按钮_天赋" id="初始界面_按钮_天赋">天赋</button>
+        <button class="初始界面_按钮_设置" id="初始界面_按钮_设置">设置</button>
+
+      </div>
+
+    </div>
+
+
+    <div class="过场动画" id="过场动画">
+      <div class="过场动画_黑柱">
+        <div class="过场动画_1"></div>
+        <div class="过场动画_2"></div>
+        <div class="过场动画_3"></div>
+      </div>
+      <div class="过场动画_文字">
+        <h1 id="过场动画_文字_h1"></h1>
+      </div>
+    </div>
+
+    <div class="开局选项" id="开局选项">
+
+      <div class="开局选项_标题">
+        <h1 class="开局选项_h1">开局选项</h1>
+      </div>
+
+      <div class="开局选项_选项">
+        <input type="text" class="开局选项_选项_名字输入框" id="开局选项_选项_名字" placeholder="请输入名字" maxlength="10">
+        <div class="开局选项_选项_其他选项">
+          <select class="开局选项_选项_性别选择框" id="开局选项_选项_性别">
+            <option value="男">男性</option>
+            <option value="女">女性</option>
+          </select>
+          <select class="开局选项_选项_难度选择框" id="开局选项_选项_难度">
+            <option value="简单">简单</option>
+            <option value="普通">普通</option>
+            <option value="困难">困难</option>
+          </select>
+        </div>
+
+      </div>
+
+      <div class="开局选项_按钮">
+        <button class="开局选项_按钮_开始" id="开局选项_按钮_开始">开始</button>
+        <button class="开局选项_按钮_返回" id="开局选项_按钮_返回">返回</button>
+      </div>
+
+    </div>
+
+
+    <div class="弹窗" id="弹窗">
+      <div class="弹窗_box">
+          <div class="弹窗_text" id="弹窗_text">
+              弹窗功能出错!
+          </div>
+          <button class="弹窗_关闭" id="弹窗_关闭">确定</button>
+      </div>
+    </div>
+
+
+
+
+
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
+
