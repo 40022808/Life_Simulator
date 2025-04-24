@@ -16,13 +16,14 @@
     <div class="初始界面" id="初始界面">
       <div class="初始界面_标题">
         <h1 class="初始界面_h1">人生模拟器</h1>
-        <h2 class="初始界面_h2">0.0.2</h2>
+        <h2 class="初始界面_h2">0.0.3</h2>
       </div>
 
 
       <div class="初始界面_按钮">
         <button class="初始界面_按钮_开始" id="初始界面_按钮_开始">开始</button>
         <button class="初始界面_按钮_天赋" id="初始界面_按钮_天赋">天赋</button>
+        <button class="初始界面_按钮_数据" id="初始界面_按钮_数据">数据</button>
         <button class="初始界面_按钮_设置" id="初始界面_按钮_设置">设置</button>
 
       </div>
@@ -48,11 +49,12 @@
       </div>
 
       <div class="开局选项_选项">
-        <input type="text" class="开局选项_选项_名字输入框" id="开局选项_选项_名字" placeholder="请输入名字" maxlength="10">
+        <input type="text" class="开局选项_选项_名字输入框" id="开局选项_选项_名字" placeholder="请输入名字" maxlength="6">
         <div class="开局选项_选项_其他选项">
           <select class="开局选项_选项_性别选择框" id="开局选项_选项_性别">
-            <option value="男">男性</option>
-            <option value="女">女性</option>
+            <option value="男性">男性</option>
+            <option value="女性">女性</option>
+            <option value="随机">随机</option>
           </select>
           <select class="开局选项_选项_难度选择框" id="开局选项_选项_难度">
             <option value="简单">简单</option>
@@ -66,6 +68,70 @@
       <div class="开局选项_按钮">
         <button class="开局选项_按钮_开始" id="开局选项_按钮_开始">开始</button>
         <button class="开局选项_按钮_返回" id="开局选项_按钮_返回">返回</button>
+      </div>
+
+    </div>
+
+    <div class="游戏界面" id="游戏界面">
+
+      <div class="游戏界面_信息">
+
+        <div class="游戏界面_信息_本次模拟信息">
+          <div id="游戏界面_信息_本次模拟信息_难度">难度</div>
+          <div id="游戏界面_信息_本次模拟信息_性别">性别</div>
+          <div id="游戏界面_信息_本次模拟信息_名字">名字</div>
+        </div>
+
+        <div class="游戏界面_信息_信息栏">
+          <div class="游戏界面_信息_信息栏_次要属性">
+
+            <div>武力:</div>
+            <div>战力:</div>
+            <div>状态:</div>
+            <div>寿命:</div>
+
+          </div>
+
+
+          <div class="游戏界面_信息_信息栏_次要属性 游戏界面_信息_信息栏_次要属性_二">
+
+            <div>体魄:</div>
+            <div>智商:</div>
+            <div>魅力:</div>
+            <div>运气:</div>
+
+          </div>
+
+
+          <div class="游戏界面_信息_信息栏_主要属性">
+
+            <div>健康:</div>
+            <div>精神:</div>
+            <div>财富:</div>
+            <div>年龄:</div>
+
+          </div>
+        </div>
+
+        <button class="游戏界面_信息_设置按钮">设置</button>
+
+
+      </div>
+
+      <div class="游戏界面_事件">
+
+      </div>
+
+      <div class="游戏界面_按钮">
+
+        <div class="游戏界面_按钮_按钮栏">
+
+          <button class="游戏界面_按钮_按钮栏_词条" id="游戏界面_按钮_按钮栏_词条">词条</button>
+          <button class="游戏界面_按钮_按钮栏_策略" id="游戏界面_按钮_按钮栏_策略">策略</button>
+          <button class="游戏界面_按钮_按钮栏_技能" id="游戏界面_按钮_按钮栏_技能">技能</button>
+          <button class="游戏界面_按钮_按钮栏_行动" id="游戏界面_按钮_按钮栏_行动">行动</button>
+
+        </div>
       </div>
 
     </div>

@@ -10,6 +10,16 @@
     height: 100vh;
 }
 
+.logo {
+    background-image: url(assets/图片/logo.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 50vw;
+    height: 50vw;
+
+}
+
 .弹窗 {
     position: fixed;
     width: 100vw;
@@ -29,8 +39,9 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: rgb(70, 70, 70);
-    border-radius: 10px;   
+    background-color: rgb(48, 48, 48);
+    border: solid 2px white;
+    border-radius: 10px;
 }
 
 .弹窗_text {
@@ -42,6 +53,7 @@
     padding: 1vh 2vw;
     background-color: rgb(100, 100, 100);
     border-radius: 50px;
+    border: solid 2px white;
 }
 
 .弹窗_关闭 {
@@ -54,6 +66,7 @@
     border: none;
     padding: 1vh 2vw;
     transition: all 0.2s;
+    border: solid 2px white;
 }
 
 .弹窗_关闭:hover {
@@ -189,9 +202,9 @@
 
 .初始界面_按钮 {
     position: absolute;
-    bottom: 5vh;
+    bottom: -10vh;
     left: 50vw;
-    height: 30vh;
+    height: 40vh;
     transform: translate(-50%, -50%);
     display: flex;
     flex-direction: column;
@@ -287,4 +300,145 @@
 .开局选项_按钮 button:hover {
     background-color: rgb(66, 66, 66);
 
+}
+
+
+.游戏界面 {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.游戏界面_信息, .游戏界面_事件, .游戏界面_按钮 {
+    flex: 1;
+    width: 100vw;
+}
+
+.游戏界面_信息_本次模拟信息 {
+    position: fixed;
+    height: 30vh;
+    width: 10vw;
+    top: -20vh;
+    left: 10vw;
+    transform: translate(-50%, 0%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(243, 243, 243);
+    border: solid 3px rgb(0, 0, 0);
+    border-top: none;
+    border-radius: 0 0 20px 20px;
+    transition: all 0.3s;
+    font-size: 1.5vmax;
+}
+
+.游戏界面_信息_本次模拟信息 div {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+}
+
+#游戏界面_信息_本次模拟信息_性别 {
+    background-color: rgb(207, 207, 207);
+}
+
+.游戏界面_信息_本次模拟信息:hover {
+    top: 0;
+}
+
+.游戏界面_信息_信息栏 {
+    position: fixed;
+    width: 60vw;
+    height: 30vh;
+    top: -20vh;
+    left: 50vw;
+    transform: translate(-50%, 0%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(243, 243, 243);
+    border: solid 3px rgb(0, 0, 0);
+    border-top: none;
+    border-radius: 0 0 20px 20px;
+    transition: all 0.3s;
+}
+
+.游戏界面_信息_信息栏:hover {
+    top: 0;
+}
+
+.游戏界面_信息_设置按钮 {
+    position: fixed;
+    width: 10vw;
+    height: 8vh;
+    top: 1vh;
+    right: 10vw;
+    transform: translate(50%, 0%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(243, 243, 243);
+    border: solid 3px rgb(0, 0, 0);
+    border-radius: 10px;
+    padding: 1vh 2vw;
+    font-size: 1.5vmax;
+    transition: all 0.2s;
+}
+
+.游戏界面_信息_设置按钮:hover {
+    background-color: rgb(78, 78, 78);
+    color: white;
+}
+
+.游戏界面_信息_信息栏_次要属性, .游戏界面_信息_信息栏_主要属性 {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    font-size: 1.5vmax;
+    color: rgb(0, 0, 0);
+}
+
+.游戏界面_信息_信息栏_次要属性.游戏界面_信息_信息栏_次要属性_二 {
+    background-color: rgb(207, 207, 207);
+}
+
+.游戏界面_按钮_按钮栏 {
+    position: fixed;
+    width: 60vw;
+    height: 15vh;
+    bottom: 0vh;
+    left: 50vw;
+    transform: translate(-50%, 0%);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: rgb(243, 243, 243);
+    border: solid 3px rgb(0, 0, 0);
+    border-bottom: none;
+    border-radius: 20px 20px 0 0;
+    padding: 1vh 2vw;
+}
+
+.游戏界面_按钮_按钮栏 button {
+    font-size: 2vmax;
+    padding: 1vh 3vw;
+    border-radius: 10px;
+    background-color: white;
+    border: solid 2px black;
+}
+
+.游戏界面_按钮_按钮栏 button:hover {
+    background-color: rgb(32, 32, 32);
+    color: white;
 }
