@@ -21,6 +21,21 @@ const 初始界面_按钮_开始 = document.getElementById('初始界面_按钮_
     
 });
 
+const 初始界面_按钮_天赋 = document.getElementById('初始界面_按钮_天赋');
+初始界面_按钮_天赋.addEventListener('click', () => {
+    弹窗函数("天赋功能暂未开放!");
+});
+
+const 初始界面_按钮_数据 = document.getElementById('初始界面_按钮_数据');
+初始界面_按钮_数据.addEventListener('click', () => {
+    弹窗函数("数据功能暂未开放!");
+});
+
+const 初始界面_按钮_设置 = document.getElementById('初始界面_按钮_设置');
+初始界面_按钮_设置.addEventListener('click', () => {
+    弹窗函数("设置功能暂未开放!");
+});
+
 const 开局选项_按钮_返回 = document.getElementById('开局选项_按钮_返回');
 开局选项_按钮_返回.addEventListener('click', () => {
     过场动画开始("返回主菜单");
