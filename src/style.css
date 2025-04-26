@@ -508,3 +508,89 @@
     color: white;
 }
 
+.游戏界面_事件 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.游戏界面_事件_事件结算 {
+    position: fixed;
+    width: 60vw;
+    height: 40vh;
+    left: 20vw;
+    display: none;
+    flex-direction: row;
+    animation: 透明入场 0.7s ease-out forwards;
+    overflow: hidden;
+}
+
+
+.游戏界面_事件_事件结算_图片 {
+    flex: 1;
+    border: solid 2px black;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 2;
+}
+
+.游戏界面_事件_事件结算_事件 {
+    flex: 2;
+    border: solid 2px black;
+    border-radius: 0 15px 15px 0;
+    border-left: none;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    animation: 从左侧入场 1.5s ease-in-out forwards;
+    animation-delay: 0.7s;
+}
+
+.游戏界面_事件_事件结算_事件_标题 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex: 1;
+    font-size: 2vmax;
+}
+
+.游戏界面_事件_事件结算_事件_内容 {
+    flex: 3;
+    border-top: solid 2px black;
+    padding: 1vh 1vw;
+    font-size: 1vmax;
+}
+
+.游戏界面_事件_事件结算_事件_结果 {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding: 1vh 1vw;
+    font-size: 1.1vmax;
+    font-weight: bold; /* 设置为粗体 */
+}
+
+@keyframes  透明入场 {
+    from {
+        transform: translateY(100px); /* 从 100px 位置开始 */
+        opacity: 0; /* 可选，让元素淡入 */
+    }
+    to {
+        transform: translateY(0); /* 回到初始位置 */
+        opacity: 1;
+    }
+}
+
+@keyframes  从左侧入场 {
+    0% {
+        transform: translateX(-40vw); /* 从 100px 位置开始 */
+        opacity: 1; /* 可选，让元素淡入 */
+    }
+    100% {
+        transform: translateX(0); /* 回到初始位置 */
+        opacity: 1;
+    }
+}
