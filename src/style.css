@@ -2,7 +2,32 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    -webkit-user-select: none; /* 适用于 Chrome 和 Safari */
+    -moz-user-select: none; /* 适用于 Firefox */
+    -ms-user-select: none; /* 适用于 IE */
+    user-select: none; /* 标准写法 */
 }
+
+/* 整个滚动条 */
+::-webkit-scrollbar {
+    width: 7px; /* 设置滚动条宽度 */
+  }
+  
+  /* 滚动条轨道 */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; /* 设置轨道背景色 */
+  }
+  
+  /* 滚动条滑块 */
+  ::-webkit-scrollbar-thumb {
+    background: #888; /* 设置滑块颜色 */
+    border-radius: 5px; /* 设置圆角 */
+  }
+  
+  /* 滚动条滑块在悬停时 */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
 
 .初始界面 {
     position: fixed;
@@ -374,7 +399,7 @@
     top: 0;
 }
 
-.游戏界面_信息_退出本次模拟按钮 {
+.游戏界面_信息_游戏内设置 {
     position: fixed;
     width: 12vw;
     height: 8vh;
@@ -384,20 +409,19 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgb(255, 0, 0);
+    background-color: rgb(243, 243, 243);
     border: solid 3px rgb(0, 0, 0);
     border-radius: 10px;
     padding: 1vh 2vw;
-    font-size: 1.2vmax;
-    color: white;
+    font-size: 2vmax;
     transition: all 0.2s;
     text-shadow: none;
 
 }
 
-.游戏界面_信息_退出本次模拟按钮:hover {
-    background-color: rgb(214, 0, 0);
-    text-shadow: 1px 1px 0 black, 1px -1px 0 black, -1px 1px 0 black, -1px -1px 0 black;
+.游戏界面_信息_游戏内设置:hover {
+    background-color: rgb(78, 78, 78);
+    color: white;
 }
 
 .游戏界面_信息_信息栏_次要属性, .游戏界面_信息_信息栏_主要属性 {
@@ -454,7 +478,7 @@
     position: fixed;
     height: 30vh;
     width: 10vw;
-    bottom: -15vh;
+    bottom: -20vh;
     left: 10vw;
     transform: translate(-50%, 0%);
     display: flex;
@@ -479,6 +503,23 @@
     justify-content: center;
     width: 100%;
 
+}
+
+.游戏界面_按钮_回合_按钮 {
+    width: 8vw;
+    height: 7vh;
+    padding: 1vh 1vw;
+    font-size: 1.2vmax;
+    border: solid 2px black;
+    border-radius: 10px;
+    background-color: rgb(255, 0, 0);
+    color: white;
+    transition: all 0.2s;
+}
+
+.游戏界面_按钮_回合_按钮:hover {
+    background-color: rgb(214, 0, 0);
+    text-shadow: 1px 1px 0 black, 1px -1px 0 black, -1px 1px 0 black, -1px -1px 0 black;
 }
 
 #游戏界面_按钮_回合_数字 {
@@ -569,7 +610,8 @@
     display: flex;
     align-items: center;
     padding: 1vh 1vw;
-    font-size: 1.1vmax;
+    font-size: 1.3vmax;
+    word-spacing: 10px;
     font-weight: bold; /* 设置为粗体 */
 }
 
@@ -593,4 +635,238 @@
         transform: translateX(0); /* 回到初始位置 */
         opacity: 1;
     }
+}
+
+.设置界面 {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.设置界面_box {
+    position: relative;
+    width: 60vw;
+    height: 60vh;
+    background-color: white;
+    border-radius: 20px 0 20px 20px;
+    border: solid 5px black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.设置界面_box_按钮 {
+    position: absolute;
+    top: -6vh;
+    right: -5px;
+    width: 6vw;
+    height: 6vh;
+    border: solid 5px rgb(0, 0, 0);
+    background-color: white;
+    font-size: 2vmax;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px 10px 0 0;
+}
+
+.设置界面_box_按钮:hover {
+    background-color: red;
+    color: rgb(255, 255, 255);
+
+}
+
+.设置界面_box_上半部分 {
+    flex: 1;
+    border-bottom: solid 2px rgb(143, 143, 143);
+    width: 30vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.设置界面_box_上半部分_标题 {
+    font-size: 3vmax;
+}
+
+.设置界面_box_下半部分 {
+    flex: 4;
+    width: 55vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    overflow-y: auto;
+    padding-top: 5vh;
+}
+
+.设置界面_box_下半部分_选项 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 50vw;
+    margin-top: 5vh;
+    font-size: 1.5vmax;
+    border: solid 2px black;
+    border-radius: 10px;
+    padding: 1vh 2vw;
+}
+
+.设置界面_box_下半部分_选项 select {
+    font-size: 1.5vmax;
+    border: solid 2px black;
+    border-radius: 10px;
+    padding: 0.6vh 0.8vw;
+    text-align: center;
+
+}
+
+.设置界面_box_保存 {
+    position: relative;
+    flex: 1;
+    border-top: solid 2px black;
+    width: 60vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 2vmax;
+    padding: 1vh 10vw;
+}
+
+.设置界面_box_保存_反馈 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2vmax;
+    display: none;
+    color: rgb(0, 224, 0);
+    text-shadow: 1px 1px 0 rgb(0, 61, 0), 1px -1px 0 rgb(0, 61, 0), -1px 1px 0 rgb(0, 61, 0), -1px -1px 0 rgb(0, 61, 0);
+}
+
+.设置界面_box_保存_按钮 {
+    font-size: 2vmax;
+    border: solid 2px black;
+    border-radius: 10px;
+    padding: 1vh 2vw;
+    background-color: white;
+    color: black;
+    transition: all 0.2s;
+}
+
+.设置界面_box_保存_按钮:hover {
+    background-color: rgb(124, 124, 124);
+    color: rgb(255, 255, 255);
+
+}
+
+.游戏界面_词条窗口 {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    z-index: 100;
+    background-color: rgba(0, 0, 0, 0.5);
+
+}
+
+.游戏界面_词条窗口_box {
+    position: absolute;
+    width: 50vw;
+    height: 65vh;
+    left: 50vw;
+    top: 50vh;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border-radius: 15px 15px 15px 15px;
+    border: solid 3px black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+}
+
+.游戏界面_词条窗口_box_上半部分 {
+    height: 5vh;
+    width: 50vw;
+    background-color: #888;
+    border-bottom: solid 3px black;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1vh 0vw;
+    overflow: hidden;
+}
+
+.游戏界面_词条窗口_box_下半部分 {
+    height: 60vh;
+    width: 50vw;
+}
+
+.游戏界面_词条窗口_box_上半部分_标题 {
+    font-size: 1.8vmax;
+    color: white;
+    position: relative;
+    left: 2vw;
+}
+
+.游戏界面_词条窗口_box_上半部分_关闭 {
+    border: none;
+    background-color: #888;
+    color: white;
+    font-size: 1.2vmax;
+    transition: all 0.2s;
+    padding: 1vh 1vw;
+}
+
+.游戏界面_词条窗口_box_上半部分_关闭:hover {
+    background-color: red;
+}
+
+.游戏界面_词条窗口_box_下半部分_词条 {
+    height: 40vh;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: row;
+    gap: 1.2vw;
+    padding: 3vh 2vw;
+    flex-wrap: wrap;
+}
+
+.游戏界面_词条窗口_box_下半部分_词条_名称 {
+    width: 8vw;
+    flex-basis: 8vw;
+    height: 6vh;
+    border-radius: 10px;
+    border: solid 2px black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2vmax;
+}
+
+.游戏界面_词条窗口_box_下半部分_词条_名称:hover {
+    background-color: rgb(217, 217, 217);
+}
+
+.游戏界面_词条窗口_box_下半部分_描述 {
+    border-top: solid 2px black;
+    height: 20vh;
+    padding: 1vh 2vw;
+    font-size: 1.3vmax;
+    
 }

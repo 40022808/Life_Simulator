@@ -73,6 +73,7 @@ export var 人物属性 = {
     "战力": 0,
     "状态":"",
     "寿命": 0,
+    "词条": [],
 }
 
 function 人物属性初始化() {
@@ -92,6 +93,8 @@ function 人物属性初始化() {
         "战力": 0,
         "状态":"",
         "寿命": 0,
+        "词条": [],
+
     }
 }
 
@@ -236,4 +239,83 @@ export function 人物属性更新函数() {
     游戏界面属性显示_战力.innerHTML = "战力: " + 人物属性.战力;
     游戏界面属性显示_状态.innerHTML = "状态: " + 人物属性.状态;
     游戏界面属性显示_寿命.innerHTML = "寿命: " + 人物属性.寿命;
+}
+
+
+export function 默认性别函数() {
+    const 开局选项_选项_性别 = document.getElementById('开局选项_选项_性别');
+    const 设置界面_默认性别_选择框 = document.getElementById('设置界面_默认性别_选择框');
+
+    var 默认性别 = localStorage.getItem("默认性别") || "随机";
+    开局选项_选项_性别.value = 默认性别;
+    设置界面_默认性别_选择框.value = 默认性别;
+}
+
+export function 默认难度函数() {
+    const 开局选项_选项_难度 = document.getElementById('开局选项_选项_难度');
+    const 设置界面_默认难度_选择框 = document.getElementById('设置界面_默认难度_选择框');
+
+    var 默认难度 = localStorage.getItem("默认难度") || "简单";
+    开局选项_选项_难度.value = 默认难度;
+    设置界面_默认难度_选择框.value = 默认难度;
+}
+
+export function 打开设置界面函数() {
+    const 设置界面 = document.getElementById('设置界面');
+    设置界面.style.display = 'flex';
+    默认性别函数()
+    默认难度函数()
+}
+
+export function 设置保存函数() {
+
+    const 设置界面_默认性别_选择框 = document.getElementById('设置界面_默认性别_选择框');
+    localStorage.setItem("默认性别", 设置界面_默认性别_选择框.value);
+    默认性别函数()
+
+    const 设置界面_默认难度_选择框 = document.getElementById('设置界面_默认难度_选择框');
+    localStorage.setItem("默认难度", 设置界面_默认难度_选择框.value);
+    默认难度函数()
+}
+
+export function 词条读取函数() {
+    const 游戏界面_词条窗口_box_下半部分_词条 = document.getElementById("游戏界面_词条窗口_box_下半部分_词条");
+
+    游戏界面_词条窗口_box_下半部分_词条.innerHTML = "";
+    
+    for (let i = 0; i < 人物属性.词条.length; i++) {
+        
+        const 词条元素 = document.createElement("div");
+        词条元素.className = "游戏界面_词条窗口_box_下半部分_词条_名称";
+        词条元素.id = 人物属性.词条[i];
+        词条元素.innerHTML = 人物属性.词条[i] ;
+        游戏界面_词条窗口_box_下半部分_词条.appendChild(词条元素);
+    }
+}
+
+async function 词条描述获取函数(词条名称) {
+    try {
+        const response = await fetch("./assets/数据/词条描述数据.json"); // 获取 JSON 数据
+        const data = await response.json(); // 解析 JSON 数据
+        return data[词条名称] || null; // 根据事件结算id返回数据
+    } catch (error) {
+        console.error("加载 JSON 失败:", error);
+        return null;
+    }
+}
+
+export function 词条描述读取函数(词条名称) {
+    const 游戏界面_词条窗口_box_下半部分_描述 = document.getElementById("游戏界面_词条窗口_box_下半部分_描述");
+
+
+    词条描述获取函数(词条名称).then(result => {
+        if (result) {
+            游戏界面_词条窗口_box_下半部分_描述.innerHTML = result;
+        }
+        else {
+            console.log("未找到对应的数据");
+        }
+
+        
+    });
 }

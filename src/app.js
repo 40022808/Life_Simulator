@@ -1,4 +1,5 @@
-import { 过场动画开始, 弹窗函数, 游戏开始函数 } from "./函数库.js";
+import { 过场动画开始, 弹窗函数, 游戏开始函数, 默认性别函数, 设置保存函数, 默认难度函数, 词条读取函数, 人物属性, 词条描述读取函数, 打开设置界面函数 } from "./函数库.js";
+import { 临时记住游戏名, 读取游戏名 } from "./数据.js";
 
 const 初始界面 = document.getElementById('初始界面');
 const 开局选项 = document.getElementById('开局选项');
@@ -8,12 +9,19 @@ const 弹窗 = document.getElementById('弹窗');
 
 
 
+///////////////////////////开局加载//////////////////////////////////////
+默认性别函数()
+默认难度函数()
+///////////////////////////开局加载//////////////////////////////////////
+
+
+
 const 初始界面_按钮_开始 = document.getElementById('初始界面_按钮_开始');
 初始界面_按钮_开始.addEventListener('click', () => {
 
     过场动画开始("logo");
 
-
+    读取游戏名();
     setTimeout(() => {
         初始界面.style.display = 'none';
         开局选项.style.display = 'flex';
@@ -33,16 +41,42 @@ const 初始界面_按钮_数据 = document.getElementById('初始界面_按钮_
 
 const 初始界面_按钮_设置 = document.getElementById('初始界面_按钮_设置');
 初始界面_按钮_设置.addEventListener('click', () => {
-    弹窗函数("设置功能暂未开放!");
+    打开设置界面函数();
+});
+
+const 设置界面_box_按钮 = document.getElementById('设置界面_box_按钮');
+设置界面_box_按钮.addEventListener('click', () => {
+    const 设置界面 = document.getElementById('设置界面');
+    设置界面.style.display = 'none';
+});
+
+const 游戏界面_信息_游戏内设置 = document.getElementById('游戏界面_信息_游戏内设置');
+游戏界面_信息_游戏内设置.addEventListener('click', () => {
+    打开设置界面函数();
 });
 
 const 开局选项_按钮_返回 = document.getElementById('开局选项_按钮_返回');
 开局选项_按钮_返回.addEventListener('click', () => {
     过场动画开始("返回主菜单");
+    临时记住游戏名()
     setTimeout(() => {
         开局选项.style.display = 'none';
         初始界面.style.display = 'flex';
     }, 1500);
+});
+
+const 设置界面_box_保存_按钮 = document.getElementById('设置界面_box_保存_按钮');
+设置界面_box_保存_按钮.addEventListener('click', () => {
+    const 设置界面_box_保存_反馈 = document.getElementById('设置界面_box_保存_反馈');
+
+    设置界面_box_保存_反馈.style.display = 'block';
+
+    setTimeout(() => {
+        设置界面_box_保存_反馈.style.display = 'none';
+    }, 3000);
+
+    设置保存函数();
+
 });
 
 
@@ -59,6 +93,7 @@ const 开局选项_按钮_开始 = document.getElementById('开局选项_按钮_
     }
     else {
         过场动画开始("游戏开始!");
+        临时记住游戏名()
         var 名字 = 开局选项_选项_名字.value;
         var 性别 = 开局选项_选项_性别.value;
         var 难度 = 开局选项_选项_难度.value;
@@ -92,13 +127,30 @@ const 弹窗_关闭 = document.getElementById('弹窗_关闭');
 
 
 
+const 游戏界面_按钮_按钮栏_词条 = document.getElementById('游戏界面_按钮_按钮栏_词条');
+游戏界面_按钮_按钮栏_词条.addEventListener('click', () => {
+    const 游戏界面_词条窗口 = document.getElementById('游戏界面_词条窗口');
+    游戏界面_词条窗口.style.display = 'flex';
+
+    词条读取函数()
+});
+
+const 游戏界面_词条窗口_box_上半部分_关闭 = document.getElementById('游戏界面_词条窗口_box_上半部分_关闭');
+游戏界面_词条窗口_box_上半部分_关闭.addEventListener('click', () => {
+    const 游戏界面_词条窗口 = document.getElementById('游戏界面_词条窗口');
+    const 游戏界面_词条窗口_box_下半部分_描述 = document.getElementById("游戏界面_词条窗口_box_下半部分_描述");
+    游戏界面_词条窗口.style.display = 'none';
+    游戏界面_词条窗口_box_下半部分_描述.innerHTML = "请选择一个词条进行查看。";
+});
 
 
+const 游戏界面_词条窗口_box_下半部分_词条 = document.getElementById("游戏界面_词条窗口_box_下半部分_词条");
+游戏界面_词条窗口_box_下半部分_词条.addEventListener("click", (event) => {
+    if (event.target.classList.contains("游戏界面_词条窗口_box_下半部分_词条_名称")) {
 
-
-
-
-
+        词条描述读取函数(event.target.id)
+    }
+});
 
 
 
