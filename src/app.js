@@ -1,4 +1,4 @@
-import { 过场动画开始, 弹窗函数, 游戏开始函数, 默认性别函数, 设置保存函数, 默认难度函数, 词条读取函数, 人物属性, 词条描述读取函数, 打开设置界面函数 } from "./函数库.js";
+import { 过场动画开始, 弹窗函数, 游戏开始函数, 默认性别函数, 设置保存函数, 默认难度函数, 词条读取函数, 人物属性, 词条描述读取函数, 打开设置界面函数, 游戏内数据, 游戏内数据更新函数 } from "./函数库.js";
 import { 临时记住游戏名, 读取游戏名 } from "./数据.js";
 
 const 初始界面 = document.getElementById('初始界面');
@@ -154,11 +154,53 @@ const 游戏界面_词条窗口_box_下半部分_词条 = document.getElementByI
 
 
 
+const 游戏界面_按钮_按钮栏_策略 = document.getElementById('游戏界面_按钮_按钮栏_策略');
+游戏界面_按钮_按钮栏_策略.addEventListener('click', () => {
+    const 游戏界面_策略窗口 = document.getElementById('游戏界面_策略窗口');
+    游戏界面_策略窗口.style.display = 'flex';
+});
+
+const 游戏界面_策略窗口_box_上半部分_关闭 = document.getElementById('游戏界面_策略窗口_box_上半部分_关闭');
+游戏界面_策略窗口_box_上半部分_关闭.addEventListener('click', () => {
+    const 游戏界面_策略窗口 = document.getElementById('游戏界面_策略窗口');
+    游戏界面_策略窗口.style.display = 'none';
+});
 
 
 
 
+const 策略加减按钮_健康_减 = document.getElementById('策略加减按钮_健康_减');
+策略加减按钮_健康_减.addEventListener('click', () => {
+    if (游戏内数据.策略_健康 > 0) {
+        游戏内数据.策略_健康 = 游戏内数据.策略_健康 - 1;
+        游戏内数据更新函数();
+    }
+    
+});
 
+const 策略加减按钮_健康_加 = document.getElementById('策略加减按钮_健康_加');
+策略加减按钮_健康_加.addEventListener('click', () => {
+    if (游戏内数据.策略_健康 < 10) {
+        游戏内数据.策略_健康 = 游戏内数据.策略_健康 + 1;
+        游戏内数据更新函数();
+    }
+});
+
+const 策略加减按钮_娱乐_减 = document.getElementById('策略加减按钮_娱乐_减');
+策略加减按钮_娱乐_减.addEventListener('click', () => {
+    if (游戏内数据.策略_精神 > 0) {
+        游戏内数据.策略_精神 = 游戏内数据.策略_精神 - 1;
+        游戏内数据更新函数();
+    }
+});
+
+const 策略加减按钮_娱乐_加 = document.getElementById('策略加减按钮_娱乐_加');
+策略加减按钮_娱乐_加.addEventListener('click', () => {
+    if (游戏内数据.策略_精神 < 10) {
+        游戏内数据.策略_精神 = 游戏内数据.策略_精神 + 1;
+        游戏内数据更新函数();
+    }
+});
 
 
 

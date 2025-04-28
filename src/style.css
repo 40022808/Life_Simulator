@@ -420,7 +420,7 @@
 }
 
 .游戏界面_信息_游戏内设置:hover {
-    background-color: rgb(78, 78, 78);
+    background-color: rgb(32, 32, 32);
     color: white;
 }
 
@@ -545,7 +545,7 @@
 }
 
 .游戏界面_按钮_回合_结束_结束按钮:hover {
-    background-color: rgb(78, 78, 78);
+    background-color: rgb(32, 32, 32);
     color: white;
 }
 
@@ -771,7 +771,7 @@
 
 }
 
-.游戏界面_词条窗口 {
+.游戏界面_词条窗口, .游戏界面_策略窗口 {
     position: fixed;
     width: 100vw;
     height: 100vh;
@@ -781,7 +781,7 @@
 
 }
 
-.游戏界面_词条窗口_box {
+.游戏界面_词条窗口_box, .游戏界面_策略窗口_box {
     position: absolute;
     width: 50vw;
     height: 65vh;
@@ -799,7 +799,7 @@
 
 }
 
-.游戏界面_词条窗口_box_上半部分 {
+.游戏界面_词条窗口_box_上半部分, .游戏界面_策略窗口_box_上半部分 {
     height: 5vh;
     width: 50vw;
     background-color: #888;
@@ -812,19 +812,19 @@
     overflow: hidden;
 }
 
-.游戏界面_词条窗口_box_下半部分 {
+.游戏界面_词条窗口_box_下半部分, .游戏界面_策略窗口_box_下半部分 {
     height: 60vh;
     width: 50vw;
 }
 
-.游戏界面_词条窗口_box_上半部分_标题 {
+.游戏界面_词条窗口_box_上半部分_标题, .游戏界面_策略窗口_box_上半部分_标题 {
     font-size: 1.8vmax;
     color: white;
     position: relative;
     left: 2vw;
 }
 
-.游戏界面_词条窗口_box_上半部分_关闭 {
+.游戏界面_词条窗口_box_上半部分_关闭, .游戏界面_策略窗口_box_上半部分_关闭 {
     border: none;
     background-color: #888;
     color: white;
@@ -833,7 +833,7 @@
     padding: 1vh 1vw;
 }
 
-.游戏界面_词条窗口_box_上半部分_关闭:hover {
+.游戏界面_词条窗口_box_上半部分_关闭:hover, .游戏界面_策略窗口_box_上半部分_关闭:hover {
     background-color: red;
 }
 
@@ -869,4 +869,72 @@
     padding: 1vh 2vw;
     font-size: 1.3vmax;
     
+}
+
+.游戏界面_策略窗口_box_下半部分_策略 {
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.游戏界面_策略窗口_box_下半部分_策略效果 {
+    border-top: solid 2px black;
+    height: 20vh;
+    width: 50vw;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    font-size: 2vmax;
+    padding: 0vh 2vw;
+    text-align: center;
+    line-height: 2;
+}
+
+.游戏界面_策略窗口_box_下半部分_策略_健康策略区块, .游戏界面_策略窗口_box_下半部分_策略_娱乐策略区块 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 40vw;
+    height: 10vh;
+    border: solid 2px black;
+    border-radius: 10px;
+    padding: 1vh 2vw;
+    font-size: 1.5vmax;
+}
+
+.游戏界面_策略窗口_box_下半部分_策略_健康策略区块_交互 , .游戏界面_策略窗口_box_下半部分_策略_娱乐策略区块_交互 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 15vw;
+}
+
+.策略加减按钮_数字 {
+    width: 3vw;
+    height: 5vh;
+    font-size: 1.2vmax;
+    border: solid 2px black;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.策略加减按钮 {
+    border: none;
+    font-size: 2vmax;
+    background-color: white;
+    width: 3vw;
+    height: 3vw;
+    border-radius: 10px;
+    transition: all 0.2s;
+}
+
+.策略加减按钮:hover {
+    background-color: rgb(217, 217, 217);
+
 }
