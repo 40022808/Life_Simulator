@@ -1,4 +1,4 @@
-import { 人物属性, 人物属性更新函数, 词条读取函数 } from "./函数库.js";
+import { 人物属性, 人物属性更新函数, 游戏内数据, 词条读取函数 } from "./函数库.js";
 
 
 
@@ -19,7 +19,7 @@ async function 事件结算获取函数(事件结算id) {
     }
 }
 
-export function 事件结算函数(事件结算id,性别) {
+export function 事件结算函数(事件结算id,性别,time) {
     事件结算获取函数(事件结算id).then(result => {
         if (result) {
             事件结算图片 = result.图片;
@@ -32,12 +32,12 @@ export function 事件结算函数(事件结算id,性别) {
             console.log("未找到对应的数据");
         }
 
-        事件结算数据载入函数(性别,事件结算id)
+        事件结算数据载入函数(性别,事件结算id,time)
     });
 }
 
 
-function 事件结算数据载入函数(性别,事件结算id) {
+function 事件结算数据载入函数(性别,事件结算id,time) {
     const 游戏界面_事件_事件结算_图片 = document.getElementById("游戏界面_事件_事件结算_图片");
     const 游戏界面_事件_事件结算_事件_标题 = document.getElementById("游戏界面_事件_事件结算_事件_标题");
     const 游戏界面_事件_事件结算_事件_内容 = document.getElementById("游戏界面_事件_事件结算_事件_内容");
@@ -55,12 +55,12 @@ function 事件结算数据载入函数(性别,事件结算id) {
     游戏界面_事件_事件结算_事件_结果.innerHTML = 事件结算结果;
 
 
-    事件效果处理函数(事件结算id)
+    事件效果处理函数(事件结算id,time)
 
 }
 
 
-function 事件效果处理函数(事件结算id) {
+function 事件效果处理函数(事件结算id,time) {
 
 
     if (事件结算id == "Z1") {
@@ -80,7 +80,13 @@ function 事件效果处理函数(事件结算id) {
     }
 
     
-    人物属性更新函数()
+    人物属性更新函数();
     词条读取函数();
 
+
+    var time2 = time + 2000;
+    setTimeout(() => {
+        游戏内数据.是否可以结束回合 = "是";
+    }, time2);
+    
 }

@@ -65,20 +65,21 @@
     align-items: center;
     justify-content: center;
     background-color: rgb(48, 48, 48);
-    border: solid 2px white;
-    border-radius: 10px;
+    background: linear-gradient(90deg, rgb(32, 32, 32), rgb(41, 41, 41));
+    border-radius: 15px
 }
 
 .弹窗_text {
     font-size: 3vmax;
     text-align: center;
+    max-width: 48vw;
     color: rgb(255, 255, 255);
     position: relative;
     top: -2vh;
     padding: 1vh 2vw;
     background-color: rgb(100, 100, 100);
     border-radius: 50px;
-    border: solid 2px white;
+    border: solid 2px rgb(0, 0, 0);
 }
 
 .弹窗_关闭 {
@@ -91,12 +92,13 @@
     border: none;
     padding: 1vh 2vw;
     transition: all 0.2s;
-    border: solid 2px white;
+    border: solid 2px rgb(48, 48, 48);
 }
 
 .弹窗_关闭:hover {
     background-color: rgb(177, 177, 177);
     color: rgb(0, 0, 0);
+    border: solid 2px rgb(255, 255, 255);
 }
 
 .开局选项 {
@@ -133,7 +135,7 @@
     align-items: center;
 }
 
-.过场动画_文字 h1 {
+#过场动画_文字_h1 {
     font-size: 7vmax;
     text-align: center;
     color: white;
